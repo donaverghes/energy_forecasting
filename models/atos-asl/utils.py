@@ -1,16 +1,15 @@
 # utils.py: use this file to group commonly used functions
 # To use it, import the file: `import utils` and use it as 
 # a classic python module: utils.read_dataset(...)
+import tensorflow as tf
 
-
-def decode_csv(value_column):
-    columns = tf.decode_csv(value_column, record_defaults=DEFAULTS)
-    features = dict(zip(CSV_COLUMNS, columns))
-    label = features.pop(LABEL_COLUMN)
-    return features, label
-
-def read_dataset(filename, mode, batch_size = 512):
-    def _input_fn():    
+def read_dataset(filename, mode, batch_size = 512, defaults = None, csv_columns = None, label_column = None):
+    def _input_fn():
+        def decode_csv(value_column):
+            columns = tf.decode_csv(value_column, record_defaults=defaults)
+            features = dict(zip(csv_columns, columns))
+            label = features.pop(label_column)
+            return features, label
         # Create list of files that match pattern
         file_list = tf.gfile.Glob(filename)
 
