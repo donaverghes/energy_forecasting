@@ -18,7 +18,7 @@ CSV_COLUMNS = [ 'prediction_date',
                'key'
               ]
 LABEL_COLUMN = 'price'
-NUMBER_OF_DAY = 289
+NUMBER_OF_BUCKET = 42 # Number of week # Number of days: 289
 
 # Set default values for each CSV column
 DEFAULTS = [['2015-01-01 00:00'], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0]]
@@ -26,7 +26,7 @@ DEFAULTS = [['2015-01-01 00:00'], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0
 def get_feature_columns():
     feature_prediction_date = tf.feature_column.categorical_column_with_hash_bucket(
         CSV_COLUMNS[0], 
-        hash_bucket_size=NUMBER_OF_DAY, 
+        hash_bucket_size=NUMBER_OF_BUCKET, 
         dtype=tf.string
     )
     
