@@ -1,4 +1,4 @@
-# energy_forcasing
+# energy_forecasing
 ASL google, Atos project created by Brem, Louis, Sasi, Donna, &amp; Sarah
 
 
