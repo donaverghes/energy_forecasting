@@ -22,7 +22,7 @@ import tensorflow as tf
 
 tf.logging.set_verbosity(tf.logging.INFO)
 
-TIMESERIES_COL = 'height'
+TIMESERIES_COL = 'price'
 N_OUTPUTS = 1  # in each sequence, 1-49 are features, and 50 is label
 SEQ_LEN = None
 DEFAULTS = None
