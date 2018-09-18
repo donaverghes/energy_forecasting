@@ -82,9 +82,11 @@ def rnn_model(features, mode, params):
 
     # 3. pass rnn output through a dense layer
     h1 = tf.layers.dense(state, N_INPUTS // 2, activation=tf.nn.relu)
-    h2 = tf.layers.dense(h1, N_INPUTS // 2, activation=tf.nn.relu6)
+    dropout_h1 = tf.layers.dropout(inputs=h1, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+    h2 = tf.layers.dense(dropout_h1, N_INPUTS // 2, activation=tf.nn.relu6)
     h3 = tf.layers.dense(h2, N_INPUTS // 2, activation=tf.nn.relu)
-    h4 = tf.layers.dense(h3, N_INPUTS // 2, activation=tf.nn.relu6)
+    dropout_h3 = tf.layers.dropout(inputs=h3, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+    h4 = tf.layers.dense(dropout_h3, N_INPUTS // 2, activation=tf.nn.relu6)
     h5 = tf.layers.dense(h4, N_INPUTS // 2, activation=tf.nn.relu)
     h6 = tf.layers.dense(h5, N_INPUTS // 2, activation=tf.nn.relu6)
     
