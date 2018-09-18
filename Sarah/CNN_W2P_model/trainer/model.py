@@ -82,7 +82,13 @@ def rnn_model(features, mode, params):
 
     # 3. pass rnn output through a dense layer
     h1 = tf.layers.dense(state, N_INPUTS // 2, activation=tf.nn.relu)
-    predictions = tf.layers.dense(h1, 1, activation=None)  # (?, 1)
+    h2 = tf.layers.dense(h1, N_INPUTS // 2, activation=tf.nn.relu6)
+    h3 = tf.layers.dense(h2, N_INPUTS // 2, activation=tf.nn.relu)
+    h4 = tf.layers.dense(h3, N_INPUTS // 2, activation=tf.nn.relu6)
+    h5 = tf.layers.dense(h4, N_INPUTS // 2, activation=tf.nn.relu)
+    h6 = tf.layers.dense(h5, N_INPUTS // 2, activation=tf.nn.relu6)
+    
+    predictions = tf.layers.dense(h3, 1, activation=None)  # (?, 1)
     return predictions
 
 
@@ -260,8 +266,7 @@ def train_and_evaluate(output_dir, hparams):
     estimator = tf.estimator.Estimator(model_fn=sequence_regressor,
                                        params=hparams,
                                        config=tf.estimator.RunConfig(
-                                           save_checkpoints_secs=
-                                           hparams['min_eval_frequency']),
+                                           save_checkpoints_secs=hparams['min_eval_frequency']),
                                        model_dir=output_dir)
     train_spec = tf.estimator.TrainSpec(input_fn=get_train,
                                         max_steps=hparams['train_steps'])
