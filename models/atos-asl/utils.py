@@ -2,15 +2,27 @@
 # To use it, import the file: `import utils` and use it as 
 # a classic python module: utils.read_dataset(...)
 
+import tensorflow as tf
 
-def decode_csv(value_column):
-    columns = tf.decode_csv(value_column, record_defaults=DEFAULTS)
-    features = dict(zip(CSV_COLUMNS, columns))
-    label = features.pop(LABEL_COLUMN)
-    return features, label
+# Set default values for each CSV column
+DEFAULTS_CSV = [['2015-01-01 00:00'], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0], [0.0]]
+SEQ_LEN = 24 # Weekly timeserie
+DEFAULTS_TS = [ [0.0] for i in range(SEQ_LEN)]
 
-def read_dataset(filename, mode, batch_size = 512):
-    def _input_fn():    
+def read_dataset(filename, mode, batch_size = 512, defaults = None, csv_columns = None, label_column = None, timeserie_column=None):
+    def _input_fn():
+        def decode_csv(value_column):
+            #tf.logging.info('defaults: {}, csv_columns: {}, label_column: {}, timeserie_column: {}'.format(defaults, csv_columns, label_column, timeserie_column))
+            if timeserie_column is not None: # Timeserie mode, read the row and the last one is the label
+                features = tf.decode_csv(value_column, record_defaults=DEFAULTS_TS)  # string tensor -> list of 50 rank 0 float tensors
+                label = features.pop()  # remove last feature and use as label
+                features = tf.stack(features)
+                return {timeserie_column: features}, label
+            else:
+                columns = tf.decode_csv(value_column, record_defaults=DEFAULTS_CSV)
+                features = dict(zip(csv_columns, columns))
+                label = features.pop(label_column)
+                return features, label
         # Create list of files that match pattern
         file_list = tf.gfile.Glob(filename)
 
