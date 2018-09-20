@@ -277,7 +277,9 @@ def train_and_evaluate(output_dir, hparams):
     estimator = tf.estimator.Estimator(model_fn=sequence_regressor,
                                        params=hparams,
                                        config=tf.estimator.RunConfig(
-                                           save_checkpoints_secs=hparams['min_eval_frequency']),
+                                           save_checkpoints_steps=50,
+                                         save_summary_steps=50
+                                       ),
                                        model_dir=output_dir)
     train_spec = tf.estimator.TrainSpec(input_fn=get_train,
                                         max_steps=hparams['train_steps'])
@@ -285,6 +287,7 @@ def train_and_evaluate(output_dir, hparams):
     eval_spec = tf.estimator.EvalSpec(input_fn=get_valid,
                                       steps=None,
                                       exporters=exporter,
-                                      start_delay_secs=hparams['eval_delay_secs'],
-                                      throttle_secs=hparams['min_eval_frequency'])
+                                      #start_delay_secs=hparams['eval_delay_secs'],
+                                      #throttle_secs=hparams['min_eval_frequency']
+                                     )
     tf.estimator.train_and_evaluate(estimator, train_spec, eval_spec)
