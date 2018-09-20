@@ -1,0 +1,32 @@
+trainingInput:
+  scaleTier: BASIC_GPU
+  hyperparameters:
+    goal: MINIMIZE
+    hyperparameterMetricTag: RMSE
+    maxTrials: 30
+    maxParallelTrials: 5
+    enableTrialEarlyStopping: True
+    params:
+    - parameterName: train_batch_size
+      type: INTEGER
+      minValue: 8
+      maxValue: 512
+      scaleType: UNIT_LINEAR_SCALE
+    - parameterName: kernel_size
+      type: INTEGER
+      minValue: 2
+      maxValue: 84
+      scaleType: UNIT_LINEAR_SCALE
+    - parameterName: filter
+      type: INTEGER
+      minValue: 2
+      maxValue: 84
+    - parameterName: stride_size
+      type: INTEGER
+      minValue: 2
+      maxValue: 2
+    - parameterName: batch_norm
+      type: CATEGORICAL
+      categoricalValues:
+      - 'True'
+      - 'False'

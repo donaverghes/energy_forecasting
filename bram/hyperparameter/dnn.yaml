@@ -1,0 +1,28 @@
+trainingInput:
+  scaleTier: BASIC_GPU
+  hyperparameters:
+    goal: MINIMIZE
+    hyperparameterMetricTag: RMSE
+    maxTrials: 30
+    maxParallelTrials: 5
+    enableTrialEarlyStopping: True
+    params:
+    - parameterName: train_batch_size
+      type: INTEGER
+      minValue: 8
+      maxValue: 512
+      scaleType: UNIT_LINEAR_SCALE
+    - parameterName: dropout_rate
+      type: DOUBLE
+      minValue: 0.05
+      maxValue: 0.25
+      scaleType: UNIT_LINEAR_SCALE
+    - parameterName: layers
+      type: CATEGORICAL
+      categoricalValues:
+      - 256,128,64,32,16,8,4
+      - 128,64,32
+      - 128,32,16
+      - 128,32,4
+      - 64,16,2
+      - 32,16,8
