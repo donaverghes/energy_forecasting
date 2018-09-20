@@ -89,8 +89,17 @@ def rnn_model(features, mode, params):
     h4 = tf.layers.dense(dropout_h3, N_INPUTS // 2, activation=tf.nn.relu6)
     h5 = tf.layers.dense(h4, N_INPUTS // 2, activation=tf.nn.relu)
     h6 = tf.layers.dense(h5, N_INPUTS // 2, activation=tf.nn.relu6)
+    h7 = tf.layers.dense(h6, N_INPUTS // 2, activation=tf.nn.relu)
+    dropout_h7 = tf.layers.dropout(inputs=h7, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+    h8 = tf.layers.dense(dropout_h7, N_INPUTS // 2, activation=tf.nn.relu6)
+    h9 = tf.layers.dense(h8, N_INPUTS // 2, activation=tf.nn.relu)
+    dropout_h9 = tf.layers.dropout(inputs=h9, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
+    h10 = tf.layers.dense(dropout_h9, N_INPUTS // 2, activation=tf.nn.relu6)
+    h11 = tf.layers.dense(h10, N_INPUTS // 2, activation=tf.nn.relu)
+    h12 = tf.layers.dense(h11, N_INPUTS // 2, activation=tf.nn.relu6)
     
-    predictions = tf.layers.dense(h3, 1, activation=None)  # (?, 1)
+    
+    predictions = tf.layers.dense(h12, 1, activation=None)  # (?, 1)
     return predictions
 
 
