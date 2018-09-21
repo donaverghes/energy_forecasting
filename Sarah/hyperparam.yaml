@@ -1,0 +1,12 @@
+trainingInput:
+  hyperparameters:
+    goal: MINIMIZE
+    maxTrials: 5
+    maxParallelTrials: 1
+    hyperparameterMetricTag: rmse
+    params:
+    - parameterName: learning_rate
+      type: DOUBLE
+      minValue: 0.01
+      maxValue: 0.1
+      scaleType: UNIT_LOG_SCALE
