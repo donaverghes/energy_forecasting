@@ -58,6 +58,12 @@ def cnn_model(features, mode, params):
                           padding='same', activation=tf.nn.relu)
     p1 = tf.layers.max_pooling1d(c1, pool_size=2, strides=2)
 
+#     outlen = p1.shape[1] * p1.shape[2]
+#     c1flat = tf.reshape(p1, [-1, outlen])
+#     h1 = tf.layers.dense(c1flat, 3, activation=tf.nn.relu)
+#     predictions = tf.layers.dense(h1, 1, activation=None)  # linear output: regression
+#     return predictions
+    
     c2 = tf.layers.conv1d(p1, filters=N_INPUTS // 2,
                           kernel_size=3, strides=1,
                           padding='same', activation=tf.nn.relu)
@@ -82,24 +88,10 @@ def rnn_model(features, mode, params):
 
     # 3. pass rnn output through a dense layer
     h1 = tf.layers.dense(state, N_INPUTS // 2, activation=tf.nn.relu)
-    dropout_h1 = tf.layers.dropout(inputs=h1, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
-    h2 = tf.layers.dense(dropout_h1, N_INPUTS // 2, activation=tf.nn.relu6)
+    h2 = tf.layers.dense(h1, N_INPUTS // 2, activation=tf.nn.relu6)
     h3 = tf.layers.dense(h2, N_INPUTS // 2, activation=tf.nn.relu)
-    dropout_h3 = tf.layers.dropout(inputs=h3, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
-    h4 = tf.layers.dense(dropout_h3, N_INPUTS // 2, activation=tf.nn.relu6)
-    h5 = tf.layers.dense(h4, N_INPUTS // 2, activation=tf.nn.relu)
-    h6 = tf.layers.dense(h5, N_INPUTS // 2, activation=tf.nn.relu6)
-    h7 = tf.layers.dense(h6, N_INPUTS // 2, activation=tf.nn.relu)
-    dropout_h7 = tf.layers.dropout(inputs=h7, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
-    h8 = tf.layers.dense(dropout_h7, N_INPUTS // 2, activation=tf.nn.relu6)
-    h9 = tf.layers.dense(h8, N_INPUTS // 2, activation=tf.nn.relu)
-    dropout_h9 = tf.layers.dropout(inputs=h9, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
-    h10 = tf.layers.dense(dropout_h9, N_INPUTS // 2, activation=tf.nn.relu6)
-    h11 = tf.layers.dense(h10, N_INPUTS // 2, activation=tf.nn.relu)
-    h12 = tf.layers.dense(h11, N_INPUTS // 2, activation=tf.nn.relu6)
     
-    
-    predictions = tf.layers.dense(h12, 1, activation=None)  # (?, 1)
+    predictions = tf.layers.dense(h3, 1, activation=None)  # (?, 1)
     return predictions
 
 
@@ -115,7 +107,14 @@ def rnn2_model(features, mode, params):
     outputs, state = tf.nn.dynamic_rnn(cells, x, dtype=tf.float32)
     # 'state' is now a tuple containing the final state of each cell layer
     # we use state[1] below to extract the final state of the final layer
-    
+    outputs = outputs[:, (N_INPUTS-1):, :] # last one only
+
+    # 3. flatten lstm output and pass through a dense layer
+    lstm_flat = tf.reshape(outputs, [-1, cells.output_size])
+    h1 = tf.layers.dense(lstm_flat, cells.output_size//2, activation=tf.nn.relu)
+    predictions = tf.layers.dense(h1, 1, activation=None) # (?, 1)
+    return predictions
+  
     # 3. pass rnn output through a dense layer
     h1 = tf.layers.dense(state[1], cells.output_size // 2, activation=tf.nn.relu)
     predictions = tf.layers.dense(h1, 1, activation=None)  # (?, 1)
@@ -224,6 +223,7 @@ def sequence_regressor(features, labels, mode, params):
         'rnn2': rnn2_model,
         'rnnN': rnnN_model}
     model_function = model_functions[params['model']]
+    print(model_function)
     predictions = model_function(features, mode, params)
 
     # 2. loss function, training/eval ops
@@ -232,7 +232,7 @@ def sequence_regressor(features, labels, mode, params):
     eval_metric_ops = None
     if mode == tf.estimator.ModeKeys.TRAIN or mode == tf.estimator.ModeKeys.EVAL:
         loss, rmse = compute_errors(features, labels, predictions)
-
+    
         if mode == tf.estimator.ModeKeys.TRAIN:
             # this is needed for batch normalization, but has no effect otherwise
             update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
