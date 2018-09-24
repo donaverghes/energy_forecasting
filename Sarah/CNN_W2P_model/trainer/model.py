@@ -97,23 +97,17 @@ def rnn_model(features, mode, params):
 
 # 2-layer RNN
 def rnn2_model(features, mode, params):
-    # dynamic_rnn needs 3D shape: [BATCH_SIZE, N_INPUTS, 1]
+    # 1. dynamic_rnn needs 3D shape: [BATCH_SIZE, N_INPUTS, 1]
     x = tf.reshape(features[TIMESERIES_COL], [-1, N_INPUTS, 1])
 
     # 2. configure the RNN
-    cell1 = tf.nn.rnn_cell.GRUCell(N_INPUTS * 2)
-    cell2 = tf.nn.rnn_cell.GRUCell(N_INPUTS // 2)
+    cell1 = tf.nn.rnn_cell.GRUCell(N_INPUTS * 3)
+    cell2 = tf.nn.rnn_cell.GRUCell(N_INPUTS // 3)
     cells = tf.nn.rnn_cell.MultiRNNCell([cell1, cell2])
     outputs, state = tf.nn.dynamic_rnn(cells, x, dtype=tf.float32)
     # 'state' is now a tuple containing the final state of each cell layer
     # we use state[1] below to extract the final state of the final layer
     outputs = outputs[:, (N_INPUTS-1):, :] # last one only
-
-    # 3. flatten lstm output and pass through a dense layer
-    lstm_flat = tf.reshape(outputs, [-1, cells.output_size])
-    h1 = tf.layers.dense(lstm_flat, cells.output_size//2, activation=tf.nn.relu)
-    predictions = tf.layers.dense(h1, 1, activation=None) # (?, 1)
-    return predictions
   
     # 3. pass rnn output through a dense layer
     h1 = tf.layers.dense(state[1], cells.output_size // 2, activation=tf.nn.relu)

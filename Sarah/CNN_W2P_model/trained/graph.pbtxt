@@ -1116,7 +1116,7 @@ node {
             size: 2
           }
         }
-        tensor_content: "1\000\000\000\n\000\000\000"
+        tensor_content: "1\000\000\000\001\000\000\000"
       }
     }
   }
@@ -1154,7 +1154,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: -0.318896412849
+        float_val: -0.346410155296
       }
     }
   }
@@ -1192,7 +1192,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
         }
-        float_val: 0.318896412849
+        float_val: 0.346410155296
       }
     }
   }
@@ -1224,7 +1224,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -1306,7 +1306,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -1341,7 +1341,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -1368,7 +1368,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -1394,7 +1394,7 @@ node {
           size: 49
         }
         dim {
-          size: 10
+          size: 1
         }
       }
     }
@@ -1434,7 +1434,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -1480,7 +1480,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -1504,7 +1504,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -1523,7 +1523,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 10
+            size: 1
           }
         }
         float_val: 0.0
@@ -1548,7 +1548,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -1571,7 +1571,7 @@ node {
     value {
       shape {
         dim {
-          size: 10
+          size: 1
         }
       }
     }
@@ -1608,7 +1608,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -1651,7 +1651,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -1678,7 +1678,7 @@ node {
             size: -1
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -1702,1364 +1702,6 @@ node {
   op: "BiasAdd"
   input: "dense/MatMul"
   input: "dense/bias/read"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 10
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "data_format"
-    value {
-      s: "NHWC"
-    }
-  }
-}
-node {
-  name: "dense/Relu"
-  op: "Relu"
-  input: "dense/BiasAdd"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 10
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_1/kernel/Initializer/random_uniform/shape"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 2
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_INT32
-        tensor_shape {
-          dim {
-            size: 2
-          }
-        }
-        tensor_content: "\n\000\000\000\003\000\000\000"
-      }
-    }
-  }
-}
-node {
-  name: "dense_1/kernel/Initializer/random_uniform/min"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-        }
-        float_val: -0.679366230965
-      }
-    }
-  }
-}
-node {
-  name: "dense_1/kernel/Initializer/random_uniform/max"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-        }
-        float_val: 0.679366230965
-      }
-    }
-  }
-}
-node {
-  name: "dense_1/kernel/Initializer/random_uniform/RandomUniform"
-  op: "RandomUniform"
-  input: "dense_1/kernel/Initializer/random_uniform/shape"
-  attr {
-    key: "T"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "seed"
-    value {
-      i: 0
-    }
-  }
-  attr {
-    key: "seed2"
-    value {
-      i: 0
-    }
-  }
-}
-node {
-  name: "dense_1/kernel/Initializer/random_uniform/sub"
-  op: "Sub"
-  input: "dense_1/kernel/Initializer/random_uniform/max"
-  input: "dense_1/kernel/Initializer/random_uniform/min"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_1/kernel/Initializer/random_uniform/mul"
-  op: "Mul"
-  input: "dense_1/kernel/Initializer/random_uniform/RandomUniform"
-  input: "dense_1/kernel/Initializer/random_uniform/sub"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_1/kernel/Initializer/random_uniform"
-  op: "Add"
-  input: "dense_1/kernel/Initializer/random_uniform/mul"
-  input: "dense_1/kernel/Initializer/random_uniform/min"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_1/kernel"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 10
-        }
-        dim {
-          size: 3
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "dense_1/kernel/Assign"
-  op: "Assign"
-  input: "dense_1/kernel"
-  input: "dense_1/kernel/Initializer/random_uniform"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "dense_1/kernel/read"
-  op: "Identity"
-  input: "dense_1/kernel"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_1/bias/Initializer/zeros"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-          dim {
-            size: 3
-          }
-        }
-        float_val: 0.0
-      }
-    }
-  }
-}
-node {
-  name: "dense_1/bias"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 3
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "dense_1/bias/Assign"
-  op: "Assign"
-  input: "dense_1/bias"
-  input: "dense_1/bias/Initializer/zeros"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "dense_1/bias/read"
-  op: "Identity"
-  input: "dense_1/bias"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_1/MatMul"
-  op: "MatMul"
-  input: "dense/Relu"
-  input: "dense_1/kernel/read"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "transpose_a"
-    value {
-      b: false
-    }
-  }
-  attr {
-    key: "transpose_b"
-    value {
-      b: false
-    }
-  }
-}
-node {
-  name: "dense_1/BiasAdd"
-  op: "BiasAdd"
-  input: "dense_1/MatMul"
-  input: "dense_1/bias/read"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "data_format"
-    value {
-      s: "NHWC"
-    }
-  }
-}
-node {
-  name: "dense_1/Relu"
-  op: "Relu"
-  input: "dense_1/BiasAdd"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_2/kernel/Initializer/random_uniform/shape"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 2
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_INT32
-        tensor_shape {
-          dim {
-            size: 2
-          }
-        }
-        tensor_content: "\003\000\000\000\001\000\000\000"
-      }
-    }
-  }
-}
-node {
-  name: "dense_2/kernel/Initializer/random_uniform/min"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-        }
-        float_val: -1.22474491596
-      }
-    }
-  }
-}
-node {
-  name: "dense_2/kernel/Initializer/random_uniform/max"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-        }
-        float_val: 1.22474491596
-      }
-    }
-  }
-}
-node {
-  name: "dense_2/kernel/Initializer/random_uniform/RandomUniform"
-  op: "RandomUniform"
-  input: "dense_2/kernel/Initializer/random_uniform/shape"
-  attr {
-    key: "T"
-    value {
-      type: DT_INT32
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "seed"
-    value {
-      i: 0
-    }
-  }
-  attr {
-    key: "seed2"
-    value {
-      i: 0
-    }
-  }
-}
-node {
-  name: "dense_2/kernel/Initializer/random_uniform/sub"
-  op: "Sub"
-  input: "dense_2/kernel/Initializer/random_uniform/max"
-  input: "dense_2/kernel/Initializer/random_uniform/min"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_2/kernel/Initializer/random_uniform/mul"
-  op: "Mul"
-  input: "dense_2/kernel/Initializer/random_uniform/RandomUniform"
-  input: "dense_2/kernel/Initializer/random_uniform/sub"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_2/kernel/Initializer/random_uniform"
-  op: "Add"
-  input: "dense_2/kernel/Initializer/random_uniform/mul"
-  input: "dense_2/kernel/Initializer/random_uniform/min"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_2/kernel"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 3
-        }
-        dim {
-          size: 1
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "dense_2/kernel/Assign"
-  op: "Assign"
-  input: "dense_2/kernel"
-  input: "dense_2/kernel/Initializer/random_uniform"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "dense_2/kernel/read"
-  op: "Identity"
-  input: "dense_2/kernel"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_2/bias/Initializer/zeros"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-          dim {
-            size: 1
-          }
-        }
-        float_val: 0.0
-      }
-    }
-  }
-}
-node {
-  name: "dense_2/bias"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 1
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "dense_2/bias/Assign"
-  op: "Assign"
-  input: "dense_2/bias"
-  input: "dense_2/bias/Initializer/zeros"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "dense_2/bias/read"
-  op: "Identity"
-  input: "dense_2/bias"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "dense_2/MatMul"
-  op: "MatMul"
-  input: "dense_1/Relu"
-  input: "dense_2/kernel/read"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "transpose_a"
-    value {
-      b: false
-    }
-  }
-  attr {
-    key: "transpose_b"
-    value {
-      b: false
-    }
-  }
-}
-node {
-  name: "dense_2/BiasAdd"
-  op: "BiasAdd"
-  input: "dense_2/MatMul"
-  input: "dense_2/bias/read"
   attr {
     key: "T"
     value {
@@ -3154,7 +1796,7 @@ node {
 node {
   name: "mean_squared_error/SquaredDifference"
   op: "SquaredDifference"
-  input: "dense_2/BiasAdd"
+  input: "dense/BiasAdd"
   input: "ExpandDims"
   attr {
     key: "T"
@@ -4346,7 +2988,7 @@ node {
   name: "sub"
   op: "Sub"
   input: "ExpandDims"
-  input: "dense_2/BiasAdd"
+  input: "dense/BiasAdd"
   attr {
     key: "T"
     value {
@@ -7165,7 +5807,7 @@ node {
 node {
   name: "OptimizeLoss/gradients/mean_squared_error/SquaredDifference_grad/Shape"
   op: "Shape"
-  input: "dense_2/BiasAdd"
+  input: "dense/BiasAdd"
   attr {
     key: "T"
     value {
@@ -7310,7 +5952,7 @@ node {
 node {
   name: "OptimizeLoss/gradients/mean_squared_error/SquaredDifference_grad/sub"
   op: "Sub"
-  input: "dense_2/BiasAdd"
+  input: "dense/BiasAdd"
   input: "ExpandDims"
   input: "^OptimizeLoss/gradients/mean_squared_error/Mul_grad/tuple/control_dependency"
   attr {
@@ -7599,7 +6241,7 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/dense_2/BiasAdd_grad/BiasAddGrad"
+  name: "OptimizeLoss/gradients/dense/BiasAdd_grad/BiasAddGrad"
   op: "BiasAddGrad"
   input: "OptimizeLoss/gradients/mean_squared_error/SquaredDifference_grad/tuple/control_dependency"
   attr {
@@ -7628,16 +6270,16 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/dense_2/BiasAdd_grad/tuple/group_deps"
+  name: "OptimizeLoss/gradients/dense/BiasAdd_grad/tuple/group_deps"
   op: "NoOp"
-  input: "^OptimizeLoss/gradients/dense_2/BiasAdd_grad/BiasAddGrad"
+  input: "^OptimizeLoss/gradients/dense/BiasAdd_grad/BiasAddGrad"
   input: "^OptimizeLoss/gradients/mean_squared_error/SquaredDifference_grad/tuple/control_dependency"
 }
 node {
-  name: "OptimizeLoss/gradients/dense_2/BiasAdd_grad/tuple/control_dependency"
+  name: "OptimizeLoss/gradients/dense/BiasAdd_grad/tuple/control_dependency"
   op: "Identity"
   input: "OptimizeLoss/gradients/mean_squared_error/SquaredDifference_grad/tuple/control_dependency"
-  input: "^OptimizeLoss/gradients/dense_2/BiasAdd_grad/tuple/group_deps"
+  input: "^OptimizeLoss/gradients/dense/BiasAdd_grad/tuple/group_deps"
   attr {
     key: "T"
     value {
@@ -7669,572 +6311,6 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/gradients/dense_2/BiasAdd_grad/tuple/control_dependency_1"
-  op: "Identity"
-  input: "OptimizeLoss/gradients/dense_2/BiasAdd_grad/BiasAddGrad"
-  input: "^OptimizeLoss/gradients/dense_2/BiasAdd_grad/tuple/group_deps"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense_2/BiasAdd_grad/BiasAddGrad"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_2/MatMul_grad/MatMul"
-  op: "MatMul"
-  input: "OptimizeLoss/gradients/dense_2/BiasAdd_grad/tuple/control_dependency"
-  input: "dense_2/kernel/read"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "transpose_a"
-    value {
-      b: false
-    }
-  }
-  attr {
-    key: "transpose_b"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_2/MatMul_grad/MatMul_1"
-  op: "MatMul"
-  input: "dense_1/Relu"
-  input: "OptimizeLoss/gradients/dense_2/BiasAdd_grad/tuple/control_dependency"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "transpose_a"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "transpose_b"
-    value {
-      b: false
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_2/MatMul_grad/tuple/group_deps"
-  op: "NoOp"
-  input: "^OptimizeLoss/gradients/dense_2/MatMul_grad/MatMul"
-  input: "^OptimizeLoss/gradients/dense_2/MatMul_grad/MatMul_1"
-}
-node {
-  name: "OptimizeLoss/gradients/dense_2/MatMul_grad/tuple/control_dependency"
-  op: "Identity"
-  input: "OptimizeLoss/gradients/dense_2/MatMul_grad/MatMul"
-  input: "^OptimizeLoss/gradients/dense_2/MatMul_grad/tuple/group_deps"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense_2/MatMul_grad/MatMul"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_2/MatMul_grad/tuple/control_dependency_1"
-  op: "Identity"
-  input: "OptimizeLoss/gradients/dense_2/MatMul_grad/MatMul_1"
-  input: "^OptimizeLoss/gradients/dense_2/MatMul_grad/tuple/group_deps"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense_2/MatMul_grad/MatMul_1"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_1/Relu_grad/ReluGrad"
-  op: "ReluGrad"
-  input: "OptimizeLoss/gradients/dense_2/MatMul_grad/tuple/control_dependency"
-  input: "dense_1/Relu"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_1/BiasAdd_grad/BiasAddGrad"
-  op: "BiasAddGrad"
-  input: "OptimizeLoss/gradients/dense_1/Relu_grad/ReluGrad"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "data_format"
-    value {
-      s: "NHWC"
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_1/BiasAdd_grad/tuple/group_deps"
-  op: "NoOp"
-  input: "^OptimizeLoss/gradients/dense_1/BiasAdd_grad/BiasAddGrad"
-  input: "^OptimizeLoss/gradients/dense_1/Relu_grad/ReluGrad"
-}
-node {
-  name: "OptimizeLoss/gradients/dense_1/BiasAdd_grad/tuple/control_dependency"
-  op: "Identity"
-  input: "OptimizeLoss/gradients/dense_1/Relu_grad/ReluGrad"
-  input: "^OptimizeLoss/gradients/dense_1/BiasAdd_grad/tuple/group_deps"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense_1/Relu_grad/ReluGrad"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_1/BiasAdd_grad/tuple/control_dependency_1"
-  op: "Identity"
-  input: "OptimizeLoss/gradients/dense_1/BiasAdd_grad/BiasAddGrad"
-  input: "^OptimizeLoss/gradients/dense_1/BiasAdd_grad/tuple/group_deps"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense_1/BiasAdd_grad/BiasAddGrad"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_1/MatMul_grad/MatMul"
-  op: "MatMul"
-  input: "OptimizeLoss/gradients/dense_1/BiasAdd_grad/tuple/control_dependency"
-  input: "dense_1/kernel/read"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 10
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "transpose_a"
-    value {
-      b: false
-    }
-  }
-  attr {
-    key: "transpose_b"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_1/MatMul_grad/MatMul_1"
-  op: "MatMul"
-  input: "dense/Relu"
-  input: "OptimizeLoss/gradients/dense_1/BiasAdd_grad/tuple/control_dependency"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "transpose_a"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "transpose_b"
-    value {
-      b: false
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_1/MatMul_grad/tuple/group_deps"
-  op: "NoOp"
-  input: "^OptimizeLoss/gradients/dense_1/MatMul_grad/MatMul"
-  input: "^OptimizeLoss/gradients/dense_1/MatMul_grad/MatMul_1"
-}
-node {
-  name: "OptimizeLoss/gradients/dense_1/MatMul_grad/tuple/control_dependency"
-  op: "Identity"
-  input: "OptimizeLoss/gradients/dense_1/MatMul_grad/MatMul"
-  input: "^OptimizeLoss/gradients/dense_1/MatMul_grad/tuple/group_deps"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense_1/MatMul_grad/MatMul"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 10
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense_1/MatMul_grad/tuple/control_dependency_1"
-  op: "Identity"
-  input: "OptimizeLoss/gradients/dense_1/MatMul_grad/MatMul_1"
-  input: "^OptimizeLoss/gradients/dense_1/MatMul_grad/tuple/group_deps"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense_1/MatMul_grad/MatMul_1"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense/Relu_grad/ReluGrad"
-  op: "ReluGrad"
-  input: "OptimizeLoss/gradients/dense_1/MatMul_grad/tuple/control_dependency"
-  input: "dense/Relu"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 10
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense/BiasAdd_grad/BiasAddGrad"
-  op: "BiasAddGrad"
-  input: "OptimizeLoss/gradients/dense/Relu_grad/ReluGrad"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "data_format"
-    value {
-      s: "NHWC"
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/gradients/dense/BiasAdd_grad/tuple/group_deps"
-  op: "NoOp"
-  input: "^OptimizeLoss/gradients/dense/BiasAdd_grad/BiasAddGrad"
-  input: "^OptimizeLoss/gradients/dense/Relu_grad/ReluGrad"
-}
-node {
-  name: "OptimizeLoss/gradients/dense/BiasAdd_grad/tuple/control_dependency"
-  op: "Identity"
-  input: "OptimizeLoss/gradients/dense/Relu_grad/ReluGrad"
-  input: "^OptimizeLoss/gradients/dense/BiasAdd_grad/tuple/group_deps"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense/Relu_grad/ReluGrad"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: -1
-          }
-          dim {
-            size: 10
-          }
-        }
-      }
-    }
-  }
-}
-node {
   name: "OptimizeLoss/gradients/dense/BiasAdd_grad/tuple/control_dependency_1"
   op: "Identity"
   input: "OptimizeLoss/gradients/dense/BiasAdd_grad/BiasAddGrad"
@@ -8259,7 +6335,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -8325,7 +6401,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -8413,7 +6489,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -8477,130 +6553,14 @@ node {
   }
 }
 node {
-  name: "OptimizeLoss/global_norm/L2Loss_2"
-  op: "L2Loss"
-  input: "OptimizeLoss/gradients/dense_1/MatMul_grad/tuple/control_dependency_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense_1/MatMul_grad/MatMul_1"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/global_norm/L2Loss_3"
-  op: "L2Loss"
-  input: "OptimizeLoss/gradients/dense_1/BiasAdd_grad/tuple/control_dependency_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense_1/BiasAdd_grad/BiasAddGrad"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/global_norm/L2Loss_4"
-  op: "L2Loss"
-  input: "OptimizeLoss/gradients/dense_2/MatMul_grad/tuple/control_dependency_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense_2/MatMul_grad/MatMul_1"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/global_norm/L2Loss_5"
-  op: "L2Loss"
-  input: "OptimizeLoss/gradients/dense_2/BiasAdd_grad/tuple/control_dependency_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@OptimizeLoss/gradients/dense_2/BiasAdd_grad/BiasAddGrad"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-}
-node {
   name: "OptimizeLoss/global_norm/stack"
   op: "Pack"
   input: "OptimizeLoss/global_norm/L2Loss"
   input: "OptimizeLoss/global_norm/L2Loss_1"
-  input: "OptimizeLoss/global_norm/L2Loss_2"
-  input: "OptimizeLoss/global_norm/L2Loss_3"
-  input: "OptimizeLoss/global_norm/L2Loss_4"
-  input: "OptimizeLoss/global_norm/L2Loss_5"
   attr {
     key: "N"
     value {
-      i: 6
+      i: 2
     }
   }
   attr {
@@ -8615,7 +6575,7 @@ node {
       list {
         shape {
           dim {
-            size: 6
+            size: 2
           }
         }
       }
@@ -9196,7 +7156,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9218,7 +7178,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
         float_val: 0.0
@@ -9246,7 +7206,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9272,7 +7232,7 @@ node {
           size: 49
         }
         dim {
-          size: 10
+          size: 1
         }
       }
     }
@@ -9312,7 +7272,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9358,7 +7318,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9385,7 +7345,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9407,7 +7367,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
         float_val: 0.0
@@ -9435,7 +7395,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9461,7 +7421,7 @@ node {
           size: 49
         }
         dim {
-          size: 10
+          size: 1
         }
       }
     }
@@ -9501,7 +7461,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9547,7 +7507,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9571,7 +7531,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9590,7 +7550,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 10
+            size: 1
           }
         }
         float_val: 0.0
@@ -9615,7 +7575,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9638,7 +7598,7 @@ node {
     value {
       shape {
         dim {
-          size: 10
+          size: 1
         }
       }
     }
@@ -9675,7 +7635,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9718,7 +7678,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9742,7 +7702,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9761,7 +7721,7 @@ node {
         dtype: DT_FLOAT
         tensor_shape {
           dim {
-            size: 10
+            size: 1
           }
         }
         float_val: 0.0
@@ -9786,7 +7746,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9809,7 +7769,7 @@ node {
     value {
       shape {
         dim {
-          size: 10
+          size: 1
         }
       }
     }
@@ -9846,7 +7806,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -9880,1446 +7840,6 @@ node {
     value {
       list {
         s: "loc:@dense/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/kernel/Adam/Initializer/zeros"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-        float_val: 0.0
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/kernel/Adam"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 10
-        }
-        dim {
-          size: 3
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/kernel/Adam/Assign"
-  op: "Assign"
-  input: "OptimizeLoss/dense_1/kernel/Adam"
-  input: "OptimizeLoss/dense_1/kernel/Adam/Initializer/zeros"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/kernel/Adam/read"
-  op: "Identity"
-  input: "OptimizeLoss/dense_1/kernel/Adam"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/kernel/Adam_1/Initializer/zeros"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-        float_val: 0.0
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/kernel/Adam_1"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 10
-        }
-        dim {
-          size: 3
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/kernel/Adam_1/Assign"
-  op: "Assign"
-  input: "OptimizeLoss/dense_1/kernel/Adam_1"
-  input: "OptimizeLoss/dense_1/kernel/Adam_1/Initializer/zeros"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/kernel/Adam_1/read"
-  op: "Identity"
-  input: "OptimizeLoss/dense_1/kernel/Adam_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/bias/Adam/Initializer/zeros"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-          dim {
-            size: 3
-          }
-        }
-        float_val: 0.0
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/bias/Adam"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 3
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/bias/Adam/Assign"
-  op: "Assign"
-  input: "OptimizeLoss/dense_1/bias/Adam"
-  input: "OptimizeLoss/dense_1/bias/Adam/Initializer/zeros"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/bias/Adam/read"
-  op: "Identity"
-  input: "OptimizeLoss/dense_1/bias/Adam"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/bias/Adam_1/Initializer/zeros"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-          dim {
-            size: 3
-          }
-        }
-        float_val: 0.0
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/bias/Adam_1"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 3
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/bias/Adam_1/Assign"
-  op: "Assign"
-  input: "OptimizeLoss/dense_1/bias/Adam_1"
-  input: "OptimizeLoss/dense_1/bias/Adam_1/Initializer/zeros"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_1/bias/Adam_1/read"
-  op: "Identity"
-  input: "OptimizeLoss/dense_1/bias/Adam_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/kernel/Adam/Initializer/zeros"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-        float_val: 0.0
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/kernel/Adam"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 3
-        }
-        dim {
-          size: 1
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/kernel/Adam/Assign"
-  op: "Assign"
-  input: "OptimizeLoss/dense_2/kernel/Adam"
-  input: "OptimizeLoss/dense_2/kernel/Adam/Initializer/zeros"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/kernel/Adam/read"
-  op: "Identity"
-  input: "OptimizeLoss/dense_2/kernel/Adam"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/kernel/Adam_1/Initializer/zeros"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-        float_val: 0.0
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/kernel/Adam_1"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 3
-        }
-        dim {
-          size: 1
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/kernel/Adam_1/Assign"
-  op: "Assign"
-  input: "OptimizeLoss/dense_2/kernel/Adam_1"
-  input: "OptimizeLoss/dense_2/kernel/Adam_1/Initializer/zeros"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/kernel/Adam_1/read"
-  op: "Identity"
-  input: "OptimizeLoss/dense_2/kernel/Adam_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/bias/Adam/Initializer/zeros"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-          dim {
-            size: 1
-          }
-        }
-        float_val: 0.0
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/bias/Adam"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 1
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/bias/Adam/Assign"
-  op: "Assign"
-  input: "OptimizeLoss/dense_2/bias/Adam"
-  input: "OptimizeLoss/dense_2/bias/Adam/Initializer/zeros"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/bias/Adam/read"
-  op: "Identity"
-  input: "OptimizeLoss/dense_2/bias/Adam"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/bias/Adam_1/Initializer/zeros"
-  op: "Const"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "value"
-    value {
-      tensor {
-        dtype: DT_FLOAT
-        tensor_shape {
-          dim {
-            size: 1
-          }
-        }
-        float_val: 0.0
-      }
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/bias/Adam_1"
-  op: "VariableV2"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "container"
-    value {
-      s: ""
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "shape"
-    value {
-      shape {
-        dim {
-          size: 1
-        }
-      }
-    }
-  }
-  attr {
-    key: "shared_name"
-    value {
-      s: ""
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/bias/Adam_1/Assign"
-  op: "Assign"
-  input: "OptimizeLoss/dense_2/bias/Adam_1"
-  input: "OptimizeLoss/dense_2/bias/Adam_1/Initializer/zeros"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/dense_2/bias/Adam_1/read"
-  op: "Identity"
-  input: "OptimizeLoss/dense_2/bias/Adam_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
       }
     }
   }
@@ -11462,7 +7982,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -11514,220 +8034,6 @@ node {
       list {
         shape {
           dim {
-            size: 10
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: false
-    }
-  }
-  attr {
-    key: "use_nesterov"
-    value {
-      b: false
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/train/update_dense_1/kernel/ApplyAdam"
-  op: "ApplyAdam"
-  input: "dense_1/kernel"
-  input: "OptimizeLoss/dense_1/kernel/Adam"
-  input: "OptimizeLoss/dense_1/kernel/Adam_1"
-  input: "OptimizeLoss/beta1_power/read"
-  input: "OptimizeLoss/beta2_power/read"
-  input: "OptimizeLoss/learning_rate/read"
-  input: "OptimizeLoss/train/beta1"
-  input: "OptimizeLoss/train/beta2"
-  input: "OptimizeLoss/train/epsilon"
-  input: "OptimizeLoss/gradients/dense_1/MatMul_grad/tuple/control_dependency_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: false
-    }
-  }
-  attr {
-    key: "use_nesterov"
-    value {
-      b: false
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/train/update_dense_1/bias/ApplyAdam"
-  op: "ApplyAdam"
-  input: "dense_1/bias"
-  input: "OptimizeLoss/dense_1/bias/Adam"
-  input: "OptimizeLoss/dense_1/bias/Adam_1"
-  input: "OptimizeLoss/beta1_power/read"
-  input: "OptimizeLoss/beta2_power/read"
-  input: "OptimizeLoss/learning_rate/read"
-  input: "OptimizeLoss/train/beta1"
-  input: "OptimizeLoss/train/beta2"
-  input: "OptimizeLoss/train/epsilon"
-  input: "OptimizeLoss/gradients/dense_1/BiasAdd_grad/tuple/control_dependency_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: false
-    }
-  }
-  attr {
-    key: "use_nesterov"
-    value {
-      b: false
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/train/update_dense_2/kernel/ApplyAdam"
-  op: "ApplyAdam"
-  input: "dense_2/kernel"
-  input: "OptimizeLoss/dense_2/kernel/Adam"
-  input: "OptimizeLoss/dense_2/kernel/Adam_1"
-  input: "OptimizeLoss/beta1_power/read"
-  input: "OptimizeLoss/beta2_power/read"
-  input: "OptimizeLoss/learning_rate/read"
-  input: "OptimizeLoss/train/beta1"
-  input: "OptimizeLoss/train/beta2"
-  input: "OptimizeLoss/train/epsilon"
-  input: "OptimizeLoss/gradients/dense_2/MatMul_grad/tuple/control_dependency_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: false
-    }
-  }
-  attr {
-    key: "use_nesterov"
-    value {
-      b: false
-    }
-  }
-}
-node {
-  name: "OptimizeLoss/train/update_dense_2/bias/ApplyAdam"
-  op: "ApplyAdam"
-  input: "dense_2/bias"
-  input: "OptimizeLoss/dense_2/bias/Adam"
-  input: "OptimizeLoss/dense_2/bias/Adam_1"
-  input: "OptimizeLoss/beta1_power/read"
-  input: "OptimizeLoss/beta2_power/read"
-  input: "OptimizeLoss/learning_rate/read"
-  input: "OptimizeLoss/train/beta1"
-  input: "OptimizeLoss/train/beta2"
-  input: "OptimizeLoss/train/epsilon"
-  input: "OptimizeLoss/gradients/dense_2/BiasAdd_grad/tuple/control_dependency_1"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
             size: 1
           }
         }
@@ -11754,10 +8060,6 @@ node {
   input: "OptimizeLoss/train/beta1"
   input: "^OptimizeLoss/train/update_dense/bias/ApplyAdam"
   input: "^OptimizeLoss/train/update_dense/kernel/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_1/bias/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_1/kernel/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_2/bias/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_2/kernel/ApplyAdam"
   attr {
     key: "T"
     value {
@@ -11830,10 +8132,6 @@ node {
   input: "OptimizeLoss/train/beta2"
   input: "^OptimizeLoss/train/update_dense/bias/ApplyAdam"
   input: "^OptimizeLoss/train/update_dense/kernel/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_1/bias/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_1/kernel/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_2/bias/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_2/kernel/ApplyAdam"
   attr {
     key: "T"
     value {
@@ -11906,10 +8204,6 @@ node {
   input: "^OptimizeLoss/train/Assign_1"
   input: "^OptimizeLoss/train/update_dense/bias/ApplyAdam"
   input: "^OptimizeLoss/train/update_dense/kernel/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_1/bias/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_1/kernel/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_2/bias/ApplyAdam"
-  input: "^OptimizeLoss/train/update_dense_2/kernel/ApplyAdam"
 }
 node {
   name: "OptimizeLoss/train/value"
@@ -13017,21 +9311,9 @@ node {
   input: "^OptimizeLoss/dense/bias/Adam_1/Assign"
   input: "^OptimizeLoss/dense/kernel/Adam/Assign"
   input: "^OptimizeLoss/dense/kernel/Adam_1/Assign"
-  input: "^OptimizeLoss/dense_1/bias/Adam/Assign"
-  input: "^OptimizeLoss/dense_1/bias/Adam_1/Assign"
-  input: "^OptimizeLoss/dense_1/kernel/Adam/Assign"
-  input: "^OptimizeLoss/dense_1/kernel/Adam_1/Assign"
-  input: "^OptimizeLoss/dense_2/bias/Adam/Assign"
-  input: "^OptimizeLoss/dense_2/bias/Adam_1/Assign"
-  input: "^OptimizeLoss/dense_2/kernel/Adam/Assign"
-  input: "^OptimizeLoss/dense_2/kernel/Adam_1/Assign"
   input: "^OptimizeLoss/learning_rate/Assign"
   input: "^dense/bias/Assign"
   input: "^dense/kernel/Assign"
-  input: "^dense_1/bias/Assign"
-  input: "^dense_1/kernel/Assign"
-  input: "^dense_2/bias/Assign"
-  input: "^dense_2/kernel/Assign"
   input: "^global_step/Assign"
 }
 node {
@@ -13131,118 +9413,6 @@ node {
 node {
   name: "report_uninitialized_variables/IsVariableInitialized_3"
   op: "IsVariableInitialized"
-  input: "dense_1/kernel"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_4"
-  op: "IsVariableInitialized"
-  input: "dense_1/bias"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_5"
-  op: "IsVariableInitialized"
-  input: "dense_2/kernel"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_6"
-  op: "IsVariableInitialized"
-  input: "dense_2/bias"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_7"
-  op: "IsVariableInitialized"
   input: "OptimizeLoss/learning_rate"
   attr {
     key: "_class"
@@ -13269,7 +9439,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_8"
+  name: "report_uninitialized_variables/IsVariableInitialized_4"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/beta1_power"
   attr {
@@ -13297,7 +9467,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_9"
+  name: "report_uninitialized_variables/IsVariableInitialized_5"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/beta2_power"
   attr {
@@ -13325,7 +9495,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_10"
+  name: "report_uninitialized_variables/IsVariableInitialized_6"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/dense/kernel/Adam"
   attr {
@@ -13353,7 +9523,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_11"
+  name: "report_uninitialized_variables/IsVariableInitialized_7"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/dense/kernel/Adam_1"
   attr {
@@ -13381,7 +9551,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_12"
+  name: "report_uninitialized_variables/IsVariableInitialized_8"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/dense/bias/Adam"
   attr {
@@ -13409,7 +9579,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_13"
+  name: "report_uninitialized_variables/IsVariableInitialized_9"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/dense/bias/Adam_1"
   attr {
@@ -13437,231 +9607,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_14"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_1/kernel/Adam"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_15"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_1/kernel/Adam_1"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_16"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_1/bias/Adam"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_17"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_1/bias/Adam_1"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_18"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_2/kernel/Adam"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_19"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_2/kernel/Adam_1"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_20"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_2/bias/Adam"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_21"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_2/bias/Adam_1"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables/IsVariableInitialized_22"
+  name: "report_uninitialized_variables/IsVariableInitialized_10"
   op: "IsVariableInitialized"
   input: "root_mean_squared_error/total"
   attr {
@@ -13689,7 +9635,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_23"
+  name: "report_uninitialized_variables/IsVariableInitialized_11"
   op: "IsVariableInitialized"
   input: "root_mean_squared_error/count"
   attr {
@@ -13717,7 +9663,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_24"
+  name: "report_uninitialized_variables/IsVariableInitialized_12"
   op: "IsVariableInitialized"
   input: "root_mean_squared_error_1/total"
   attr {
@@ -13745,7 +9691,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables/IsVariableInitialized_25"
+  name: "report_uninitialized_variables/IsVariableInitialized_13"
   op: "IsVariableInitialized"
   input: "root_mean_squared_error_1/count"
   attr {
@@ -13789,23 +9735,11 @@ node {
   input: "report_uninitialized_variables/IsVariableInitialized_11"
   input: "report_uninitialized_variables/IsVariableInitialized_12"
   input: "report_uninitialized_variables/IsVariableInitialized_13"
-  input: "report_uninitialized_variables/IsVariableInitialized_14"
-  input: "report_uninitialized_variables/IsVariableInitialized_15"
-  input: "report_uninitialized_variables/IsVariableInitialized_16"
-  input: "report_uninitialized_variables/IsVariableInitialized_17"
-  input: "report_uninitialized_variables/IsVariableInitialized_18"
-  input: "report_uninitialized_variables/IsVariableInitialized_19"
-  input: "report_uninitialized_variables/IsVariableInitialized_20"
-  input: "report_uninitialized_variables/IsVariableInitialized_21"
-  input: "report_uninitialized_variables/IsVariableInitialized_22"
-  input: "report_uninitialized_variables/IsVariableInitialized_23"
-  input: "report_uninitialized_variables/IsVariableInitialized_24"
-  input: "report_uninitialized_variables/IsVariableInitialized_25"
   device: "/device:CPU:0"
   attr {
     key: "N"
     value {
-      i: 26
+      i: 14
     }
   }
   attr {
@@ -13820,7 +9754,7 @@ node {
       list {
         shape {
           dim {
-            size: 26
+            size: 14
           }
         }
       }
@@ -13844,7 +9778,7 @@ node {
       list {
         shape {
           dim {
-            size: 26
+            size: 14
           }
         }
       }
@@ -13861,7 +9795,7 @@ node {
       list {
         shape {
           dim {
-            size: 26
+            size: 14
           }
         }
       }
@@ -13880,16 +9814,12 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 26
+            size: 14
           }
         }
         string_val: "global_step"
         string_val: "dense/kernel"
         string_val: "dense/bias"
-        string_val: "dense_1/kernel"
-        string_val: "dense_1/bias"
-        string_val: "dense_2/kernel"
-        string_val: "dense_2/bias"
         string_val: "OptimizeLoss/learning_rate"
         string_val: "OptimizeLoss/beta1_power"
         string_val: "OptimizeLoss/beta2_power"
@@ -13897,14 +9827,6 @@ node {
         string_val: "OptimizeLoss/dense/kernel/Adam_1"
         string_val: "OptimizeLoss/dense/bias/Adam"
         string_val: "OptimizeLoss/dense/bias/Adam_1"
-        string_val: "OptimizeLoss/dense_1/kernel/Adam"
-        string_val: "OptimizeLoss/dense_1/kernel/Adam_1"
-        string_val: "OptimizeLoss/dense_1/bias/Adam"
-        string_val: "OptimizeLoss/dense_1/bias/Adam_1"
-        string_val: "OptimizeLoss/dense_2/kernel/Adam"
-        string_val: "OptimizeLoss/dense_2/kernel/Adam_1"
-        string_val: "OptimizeLoss/dense_2/bias/Adam"
-        string_val: "OptimizeLoss/dense_2/bias/Adam_1"
         string_val: "root_mean_squared_error/total"
         string_val: "root_mean_squared_error/count"
         string_val: "root_mean_squared_error_1/total"
@@ -13945,7 +9867,7 @@ node {
             size: 1
           }
         }
-        int_val: 26
+        int_val: 14
       }
     }
   }
@@ -14227,7 +10149,7 @@ node {
             size: 1
           }
         }
-        int_val: 26
+        int_val: 14
       }
     }
   }
@@ -14437,7 +10359,7 @@ node {
             size: 1
           }
         }
-        int_val: 26
+        int_val: 14
       }
     }
   }
@@ -14745,7 +10667,7 @@ node {
       list {
         shape {
           dim {
-            size: 26
+            size: 14
           }
         }
       }
@@ -14813,7 +10735,7 @@ node {
       list {
         shape {
           dim {
-            size: 26
+            size: 14
           }
         }
       }
@@ -15136,118 +11058,6 @@ node {
 node {
   name: "report_uninitialized_variables_1/IsVariableInitialized_3"
   op: "IsVariableInitialized"
-  input: "dense_1/kernel"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_4"
-  op: "IsVariableInitialized"
-  input: "dense_1/bias"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_5"
-  op: "IsVariableInitialized"
-  input: "dense_2/kernel"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_6"
-  op: "IsVariableInitialized"
-  input: "dense_2/bias"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_7"
-  op: "IsVariableInitialized"
   input: "OptimizeLoss/learning_rate"
   attr {
     key: "_class"
@@ -15274,7 +11084,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_8"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_4"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/beta1_power"
   attr {
@@ -15302,7 +11112,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_9"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_5"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/beta2_power"
   attr {
@@ -15330,7 +11140,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_10"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_6"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/dense/kernel/Adam"
   attr {
@@ -15358,7 +11168,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_11"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_7"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/dense/kernel/Adam_1"
   attr {
@@ -15386,7 +11196,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_12"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_8"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/dense/bias/Adam"
   attr {
@@ -15414,7 +11224,7 @@ node {
   }
 }
 node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_13"
+  name: "report_uninitialized_variables_1/IsVariableInitialized_9"
   op: "IsVariableInitialized"
   input: "OptimizeLoss/dense/bias/Adam_1"
   attr {
@@ -15422,230 +11232,6 @@ node {
     value {
       list {
         s: "loc:@dense/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_14"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_1/kernel/Adam"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_15"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_1/kernel/Adam_1"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_16"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_1/bias/Adam"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_17"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_1/bias/Adam_1"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_18"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_2/kernel/Adam"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_19"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_2/kernel/Adam_1"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_20"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_2/bias/Adam"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-        }
-      }
-    }
-  }
-  attr {
-    key: "dtype"
-    value {
-      type: DT_FLOAT
-    }
-  }
-}
-node {
-  name: "report_uninitialized_variables_1/IsVariableInitialized_21"
-  op: "IsVariableInitialized"
-  input: "OptimizeLoss/dense_2/bias/Adam_1"
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
       }
     }
   }
@@ -15678,23 +11264,11 @@ node {
   input: "report_uninitialized_variables_1/IsVariableInitialized_7"
   input: "report_uninitialized_variables_1/IsVariableInitialized_8"
   input: "report_uninitialized_variables_1/IsVariableInitialized_9"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_10"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_11"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_12"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_13"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_14"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_15"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_16"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_17"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_18"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_19"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_20"
-  input: "report_uninitialized_variables_1/IsVariableInitialized_21"
   device: "/device:CPU:0"
   attr {
     key: "N"
     value {
-      i: 22
+      i: 10
     }
   }
   attr {
@@ -15709,7 +11283,7 @@ node {
       list {
         shape {
           dim {
-            size: 22
+            size: 10
           }
         }
       }
@@ -15733,7 +11307,7 @@ node {
       list {
         shape {
           dim {
-            size: 22
+            size: 10
           }
         }
       }
@@ -15750,7 +11324,7 @@ node {
       list {
         shape {
           dim {
-            size: 22
+            size: 10
           }
         }
       }
@@ -15769,16 +11343,12 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 22
+            size: 10
           }
         }
         string_val: "global_step"
         string_val: "dense/kernel"
         string_val: "dense/bias"
-        string_val: "dense_1/kernel"
-        string_val: "dense_1/bias"
-        string_val: "dense_2/kernel"
-        string_val: "dense_2/bias"
         string_val: "OptimizeLoss/learning_rate"
         string_val: "OptimizeLoss/beta1_power"
         string_val: "OptimizeLoss/beta2_power"
@@ -15786,14 +11356,6 @@ node {
         string_val: "OptimizeLoss/dense/kernel/Adam_1"
         string_val: "OptimizeLoss/dense/bias/Adam"
         string_val: "OptimizeLoss/dense/bias/Adam_1"
-        string_val: "OptimizeLoss/dense_1/kernel/Adam"
-        string_val: "OptimizeLoss/dense_1/kernel/Adam_1"
-        string_val: "OptimizeLoss/dense_1/bias/Adam"
-        string_val: "OptimizeLoss/dense_1/bias/Adam_1"
-        string_val: "OptimizeLoss/dense_2/kernel/Adam"
-        string_val: "OptimizeLoss/dense_2/kernel/Adam_1"
-        string_val: "OptimizeLoss/dense_2/bias/Adam"
-        string_val: "OptimizeLoss/dense_2/bias/Adam_1"
       }
     }
   }
@@ -15830,7 +11392,7 @@ node {
             size: 1
           }
         }
-        int_val: 22
+        int_val: 10
       }
     }
   }
@@ -16112,7 +11674,7 @@ node {
             size: 1
           }
         }
-        int_val: 22
+        int_val: 10
       }
     }
   }
@@ -16322,7 +11884,7 @@ node {
             size: 1
           }
         }
-        int_val: 22
+        int_val: 10
       }
     }
   }
@@ -16630,7 +12192,7 @@ node {
       list {
         shape {
           dim {
-            size: 22
+            size: 10
           }
         }
       }
@@ -16698,7 +12260,7 @@ node {
       list {
         shape {
           dim {
-            size: 22
+            size: 10
           }
         }
       }
@@ -16933,7 +12495,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
         }
-        string_val: "_temp_7a4b1dcdbe014526bc2e1f2730837b79/part"
+        string_val: "_temp_c23edba7fb124a3da6ee7b7551d10bca/part"
       }
     }
   }
@@ -17053,7 +12615,7 @@ node {
       list {
         shape {
           dim {
-            size: 22
+            size: 10
           }
         }
       }
@@ -17072,7 +12634,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 22
+            size: 10
           }
         }
         string_val: "OptimizeLoss/beta1_power"
@@ -17081,21 +12643,9 @@ node {
         string_val: "OptimizeLoss/dense/bias/Adam_1"
         string_val: "OptimizeLoss/dense/kernel/Adam"
         string_val: "OptimizeLoss/dense/kernel/Adam_1"
-        string_val: "OptimizeLoss/dense_1/bias/Adam"
-        string_val: "OptimizeLoss/dense_1/bias/Adam_1"
-        string_val: "OptimizeLoss/dense_1/kernel/Adam"
-        string_val: "OptimizeLoss/dense_1/kernel/Adam_1"
-        string_val: "OptimizeLoss/dense_2/bias/Adam"
-        string_val: "OptimizeLoss/dense_2/bias/Adam_1"
-        string_val: "OptimizeLoss/dense_2/kernel/Adam"
-        string_val: "OptimizeLoss/dense_2/kernel/Adam_1"
         string_val: "OptimizeLoss/learning_rate"
         string_val: "dense/bias"
         string_val: "dense/kernel"
-        string_val: "dense_1/bias"
-        string_val: "dense_1/kernel"
-        string_val: "dense_2/bias"
-        string_val: "dense_2/kernel"
         string_val: "global_step"
       }
     }
@@ -17111,7 +12661,7 @@ node {
       list {
         shape {
           dim {
-            size: 22
+            size: 10
           }
         }
       }
@@ -17130,21 +12680,9 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 22
+            size: 10
           }
         }
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
         string_val: ""
         string_val: ""
         string_val: ""
@@ -17171,39 +12709,15 @@ node {
   input: "OptimizeLoss/dense/bias/Adam_1"
   input: "OptimizeLoss/dense/kernel/Adam"
   input: "OptimizeLoss/dense/kernel/Adam_1"
-  input: "OptimizeLoss/dense_1/bias/Adam"
-  input: "OptimizeLoss/dense_1/bias/Adam_1"
-  input: "OptimizeLoss/dense_1/kernel/Adam"
-  input: "OptimizeLoss/dense_1/kernel/Adam_1"
-  input: "OptimizeLoss/dense_2/bias/Adam"
-  input: "OptimizeLoss/dense_2/bias/Adam_1"
-  input: "OptimizeLoss/dense_2/kernel/Adam"
-  input: "OptimizeLoss/dense_2/kernel/Adam_1"
   input: "OptimizeLoss/learning_rate"
   input: "dense/bias"
   input: "dense/kernel"
-  input: "dense_1/bias"
-  input: "dense_1/kernel"
-  input: "dense_2/bias"
-  input: "dense_2/kernel"
   input: "global_step"
   device: "/device:CPU:0"
   attr {
     key: "dtypes"
     value {
       list {
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
         type: DT_FLOAT
         type: DT_FLOAT
         type: DT_FLOAT
@@ -17331,7 +12845,7 @@ node {
       list {
         shape {
           dim {
-            size: 22
+            size: 10
           }
         }
       }
@@ -17350,7 +12864,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 22
+            size: 10
           }
         }
         string_val: "OptimizeLoss/beta1_power"
@@ -17359,21 +12873,9 @@ node {
         string_val: "OptimizeLoss/dense/bias/Adam_1"
         string_val: "OptimizeLoss/dense/kernel/Adam"
         string_val: "OptimizeLoss/dense/kernel/Adam_1"
-        string_val: "OptimizeLoss/dense_1/bias/Adam"
-        string_val: "OptimizeLoss/dense_1/bias/Adam_1"
-        string_val: "OptimizeLoss/dense_1/kernel/Adam"
-        string_val: "OptimizeLoss/dense_1/kernel/Adam_1"
-        string_val: "OptimizeLoss/dense_2/bias/Adam"
-        string_val: "OptimizeLoss/dense_2/bias/Adam_1"
-        string_val: "OptimizeLoss/dense_2/kernel/Adam"
-        string_val: "OptimizeLoss/dense_2/kernel/Adam_1"
         string_val: "OptimizeLoss/learning_rate"
         string_val: "dense/bias"
         string_val: "dense/kernel"
-        string_val: "dense_1/bias"
-        string_val: "dense_1/kernel"
-        string_val: "dense_2/bias"
-        string_val: "dense_2/kernel"
         string_val: "global_step"
       }
     }
@@ -17389,7 +12891,7 @@ node {
       list {
         shape {
           dim {
-            size: 22
+            size: 10
           }
         }
       }
@@ -17408,21 +12910,9 @@ node {
         dtype: DT_STRING
         tensor_shape {
           dim {
-            size: 22
+            size: 10
           }
         }
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
-        string_val: ""
         string_val: ""
         string_val: ""
         string_val: ""
@@ -17478,42 +12968,6 @@ node {
         shape {
           unknown_rank: true
         }
-        shape {
-          unknown_rank: true
-        }
-        shape {
-          unknown_rank: true
-        }
-        shape {
-          unknown_rank: true
-        }
-        shape {
-          unknown_rank: true
-        }
-        shape {
-          unknown_rank: true
-        }
-        shape {
-          unknown_rank: true
-        }
-        shape {
-          unknown_rank: true
-        }
-        shape {
-          unknown_rank: true
-        }
-        shape {
-          unknown_rank: true
-        }
-        shape {
-          unknown_rank: true
-        }
-        shape {
-          unknown_rank: true
-        }
-        shape {
-          unknown_rank: true
-        }
       }
     }
   }
@@ -17521,18 +12975,6 @@ node {
     key: "dtypes"
     value {
       list {
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
-        type: DT_FLOAT
         type: DT_FLOAT
         type: DT_FLOAT
         type: DT_FLOAT
@@ -17654,7 +13096,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -17698,7 +13140,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -17745,7 +13187,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -17792,7 +13234,7 @@ node {
             size: 49
           }
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -17814,372 +13256,8 @@ node {
 node {
   name: "save/Assign_6"
   op: "Assign"
-  input: "OptimizeLoss/dense_1/bias/Adam"
-  input: "save/RestoreV2:6"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_7"
-  op: "Assign"
-  input: "OptimizeLoss/dense_1/bias/Adam_1"
-  input: "save/RestoreV2:7"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_8"
-  op: "Assign"
-  input: "OptimizeLoss/dense_1/kernel/Adam"
-  input: "save/RestoreV2:8"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_9"
-  op: "Assign"
-  input: "OptimizeLoss/dense_1/kernel/Adam_1"
-  input: "save/RestoreV2:9"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_10"
-  op: "Assign"
-  input: "OptimizeLoss/dense_2/bias/Adam"
-  input: "save/RestoreV2:10"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_11"
-  op: "Assign"
-  input: "OptimizeLoss/dense_2/bias/Adam_1"
-  input: "save/RestoreV2:11"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_12"
-  op: "Assign"
-  input: "OptimizeLoss/dense_2/kernel/Adam"
-  input: "save/RestoreV2:12"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_13"
-  op: "Assign"
-  input: "OptimizeLoss/dense_2/kernel/Adam_1"
-  input: "save/RestoreV2:13"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_14"
-  op: "Assign"
   input: "OptimizeLoss/learning_rate"
-  input: "save/RestoreV2:14"
+  input: "save/RestoreV2:6"
   attr {
     key: "T"
     value {
@@ -18217,10 +13295,10 @@ node {
   }
 }
 node {
-  name: "save/Assign_15"
+  name: "save/Assign_7"
   op: "Assign"
   input: "dense/bias"
-  input: "save/RestoreV2:15"
+  input: "save/RestoreV2:7"
   attr {
     key: "T"
     value {
@@ -18241,7 +13319,7 @@ node {
       list {
         shape {
           dim {
-            size: 10
+            size: 1
           }
         }
       }
@@ -18261,10 +13339,10 @@ node {
   }
 }
 node {
-  name: "save/Assign_16"
+  name: "save/Assign_8"
   op: "Assign"
   input: "dense/kernel"
-  input: "save/RestoreV2:16"
+  input: "save/RestoreV2:8"
   attr {
     key: "T"
     value {
@@ -18288,141 +13366,6 @@ node {
             size: 49
           }
           dim {
-            size: 10
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_17"
-  op: "Assign"
-  input: "dense_1/bias"
-  input: "save/RestoreV2:17"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_18"
-  op: "Assign"
-  input: "dense_1/kernel"
-  input: "save/RestoreV2:18"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_1/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 10
-          }
-          dim {
-            size: 3
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_19"
-  op: "Assign"
-  input: "dense_2/bias"
-  input: "save/RestoreV2:19"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/bias"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
             size: 1
           }
         }
@@ -18443,57 +13386,10 @@ node {
   }
 }
 node {
-  name: "save/Assign_20"
-  op: "Assign"
-  input: "dense_2/kernel"
-  input: "save/RestoreV2:20"
-  attr {
-    key: "T"
-    value {
-      type: DT_FLOAT
-    }
-  }
-  attr {
-    key: "_class"
-    value {
-      list {
-        s: "loc:@dense_2/kernel"
-      }
-    }
-  }
-  attr {
-    key: "_output_shapes"
-    value {
-      list {
-        shape {
-          dim {
-            size: 3
-          }
-          dim {
-            size: 1
-          }
-        }
-      }
-    }
-  }
-  attr {
-    key: "use_locking"
-    value {
-      b: true
-    }
-  }
-  attr {
-    key: "validate_shape"
-    value {
-      b: true
-    }
-  }
-}
-node {
-  name: "save/Assign_21"
+  name: "save/Assign_9"
   op: "Assign"
   input: "global_step"
-  input: "save/RestoreV2:21"
+  input: "save/RestoreV2:9"
   attr {
     key: "T"
     value {
@@ -18535,19 +13431,7 @@ node {
   op: "NoOp"
   input: "^save/Assign"
   input: "^save/Assign_1"
-  input: "^save/Assign_10"
-  input: "^save/Assign_11"
-  input: "^save/Assign_12"
-  input: "^save/Assign_13"
-  input: "^save/Assign_14"
-  input: "^save/Assign_15"
-  input: "^save/Assign_16"
-  input: "^save/Assign_17"
-  input: "^save/Assign_18"
-  input: "^save/Assign_19"
   input: "^save/Assign_2"
-  input: "^save/Assign_20"
-  input: "^save/Assign_21"
   input: "^save/Assign_3"
   input: "^save/Assign_4"
   input: "^save/Assign_5"
