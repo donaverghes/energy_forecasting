@@ -44,8 +44,8 @@ def linear_model(features, mode, params):
 
 def dnn_model(features, mode, params):
     X = features[TIMESERIES_COL]
-    h1 = tf.layers.dense(X, 10, activation=tf.nn.relu)
-    h2 = tf.layers.dense(h1, 3, activation=tf.nn.relu)
+    h1 = tf.layers.dense(inputs=X, units=20, activation=tf.nn.relu6)
+    h2 = tf.layers.dense(inputs=h1, units=10, activation=tf.nn.relu6)
     predictions = tf.layers.dense(h2, 1, activation=None)  # linear output: regression
     return predictions
 
@@ -53,7 +53,7 @@ def dnn_model(features, mode, params):
 def cnn_model(features, mode, params):
     X = tf.reshape(features[TIMESERIES_COL],
                    [-1, N_INPUTS, 1])  # as a 1D "sequence" with only one time-series observation (height)
-    c1 = tf.layers.conv1d(X, filters=N_INPUTS // 2,
+    c1 = tf.layers.conv1d(X, filters=N_INPUTS // 3,
                           kernel_size=3, strides=1,
                           padding='same', activation=tf.nn.relu)
     p1 = tf.layers.max_pooling1d(c1, pool_size=2, strides=2)
@@ -64,7 +64,7 @@ def cnn_model(features, mode, params):
 #     predictions = tf.layers.dense(h1, 1, activation=None)  # linear output: regression
 #     return predictions
     
-    c2 = tf.layers.conv1d(p1, filters=N_INPUTS // 2,
+    c2 = tf.layers.conv1d(p1, filters=N_INPUTS // 3,
                           kernel_size=3, strides=1,
                           padding='same', activation=tf.nn.relu)
     p2 = tf.layers.max_pooling1d(c2, pool_size=2, strides=2)
@@ -87,9 +87,9 @@ def rnn_model(features, mode, params):
     outputs, state = tf.nn.dynamic_rnn(cell, x, dtype=tf.float32)
 
     # 3. pass rnn output through a dense layer
-    h1 = tf.layers.dense(state, N_INPUTS // 2, activation=tf.nn.relu)
-    h2 = tf.layers.dense(h1, N_INPUTS // 2, activation=tf.nn.relu6)
-    h3 = tf.layers.dense(h2, N_INPUTS // 2, activation=tf.nn.relu)
+    h1 = tf.layers.dense(state, N_INPUTS // 3, activation=tf.nn.relu)
+    h2 = tf.layers.dense(h1, N_INPUTS // 3, activation=tf.nn.relu6)
+    h3 = tf.layers.dense(h2, N_INPUTS // 3, activation=tf.nn.relu)
     
     predictions = tf.layers.dense(h3, 1, activation=None)  # (?, 1)
     return predictions
@@ -121,8 +121,8 @@ def rnnN_model(features, mode, params):
     x = tf.reshape(features[TIMESERIES_COL], [-1, N_INPUTS, 1])
 
     # 2. configure the RNN
-    cell1 = tf.nn.rnn_cell.GRUCell(N_INPUTS * 2)
-    cell2 = tf.nn.rnn_cell.GRUCell(N_INPUTS // 2)
+    cell1 = tf.nn.rnn_cell.GRUCell(N_INPUTS * 3)
+    cell2 = tf.nn.rnn_cell.GRUCell(N_INPUTS // 3)
     cells = tf.nn.rnn_cell.MultiRNNCell([cell1, cell2])
     outputs, state = tf.nn.dynamic_rnn(cells, x, dtype=tf.float32)
     # 'outputs' contains the state of the final layer for every time step
@@ -130,8 +130,8 @@ def rnnN_model(features, mode, params):
     
     # 3. pass state for each time step through a DNN, to get a prediction
     # for each time step 
-    h1 = tf.layers.dense(outputs, cells.output_size, activation=tf.nn.relu)
-    h2 = tf.layers.dense(h1, cells.output_size // 2, activation=tf.nn.relu)
+    h1 = tf.layers.dense(state[1], cells.output_size, activation=tf.nn.relu)
+    h2 = tf.layers.dense(h1, cells.output_size // 3, activation=tf.nn.relu)
     predictions = tf.layers.dense(h2, 1, activation=None)  # (?, N_INPUTS, 1)
     predictions = tf.reshape(predictions, [-1, N_INPUTS])
     return predictions # return prediction for each time step
