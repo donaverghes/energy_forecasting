@@ -1,8 +1,8 @@
 trainingInput:
   hyperparameters:
     goal: MINIMIZE
-    maxTrials: 5
-    maxParallelTrials: 1
+    maxTrials: 50
+    maxParallelTrials: 5
     hyperparameterMetricTag: rmse
     params:
     - parameterName: learning_rate
@@ -10,3 +10,8 @@ trainingInput:
       minValue: 0.01
       maxValue: 0.1
       scaleType: UNIT_LOG_SCALE
+    - parameterName: train_batch_size
+      type: INTEGER
+      minValue: 8
+      maxValue: 512
+      scaleType: UNIT_LINEAR_SCALE
