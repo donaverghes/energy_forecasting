@@ -51,7 +51,8 @@ CNN_P_price = c(rep(0,5554),CNN$P_price)
 
 
 ### Autoregressive Informed Moving Average
-ARIMA = read.csv('ARIMA.csv')
+hARIMA <- getURL('https://raw.githubusercontent.com/sarah-ewing/energy_forecasting/master/Sarah/ARIMA.csv')
+ARIMA <- read.csv(text = hARIMA, header=T)
 colnames(ARIMA) = c("ID", "Dttm", "price","P_price")
 ARIMA$Dttm = as.POSIXct(ARIMA$Dttm,
                         tz = "UTC",
